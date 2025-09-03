@@ -1,0 +1,137 @@
+/* Container styling */
+#onlineTest .container {
+    max-width: 100%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Label styling */
+label[for="subjectDropdown"] {
+    margin-top: 5%;
+    display: block;
+    color: #1a771d;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Modern select styling */
+#subjectSelect {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Hover & focus effects */
+#subjectSelect:hover {
+    border-color: #888;
+}
+#subjectSelect option:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+#subjectSelect option:checked {
+    background-color: #4CAF50;
+    color: white;
+}
+#subjectSelect:focus {
+    border-color: #4CAF50;
+    box-shadow: 0px 0px 6px rgba(76,175,80,0.4);
+}
+
+/* Style for test boxes */
+#testsContainer > div {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#testsContainer > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.12);
+}
+.subject-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.subject-box h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.section-btn {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #4caf50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.section-btn:hover {
+    background: #45a049;
+}
+
+/* Subject button - long horizontal */
+.subject-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    background: #009c37;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subject-btn:hover {
+    background: #126616;
+}
+
+/* Section buttons - long like subject buttons */
+.section-btnss {
+    display: block;
+    width: 165%;            /* nearly same as subject-btn */
+    padding: 12px 15px;
+    margin: 6px auto;      /* centers the button */
+    border: none;
+    border-radius: 6px;
+    background: #2e7d32;   /* darker green */
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.section-btnss:hover {
+    background: #1b5e20;   /* even darker green on hover */
+}
+
+/* Collapsible section container */
+.section-box {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+/* When expanded */
+.section-box.open {
+    max-height: 1000px; /* large enough for all buttons */
+}

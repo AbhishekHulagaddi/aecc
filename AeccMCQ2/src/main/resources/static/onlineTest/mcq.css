@@ -1,0 +1,202 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f3f6fa;
+    margin: 0;
+    padding: 0;
+}
+
+.test-container {
+    width: 70%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+#timer {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d9534f;
+    background: #fbeaea;
+    padding: 6px 14px;
+    border-radius: 8px;
+}
+
+.question {
+    margin-top: 15px;
+}
+
+.question h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+}
+
+.option:hover {
+    background: #eef9f0;
+    border-color: #2e9031;
+}
+
+.option input {
+    display: none;
+}
+
+.option::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    margin-right: 12px;
+    transition: 0.25s ease;
+    background: white;
+}
+
+.option input:checked + span {
+    font-weight: bold;
+    color: #2e9031;
+}
+
+.option input:checked + span::before {
+    background: #2e9031;
+    border-color: #2e9031;
+    box-shadow: inset 0 0 0 4px white;
+}
+
+.controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #2e9031;
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.25s;
+}
+
+button:hover {
+    background: #267628;
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* When option is selected → fully green */
+.option.selected {
+    background: #abf2ad;
+    color: #fff;
+    font-weight: bold;
+}
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+.mcq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(46, 125, 50, 0.9);
+    padding: 10px 20px;
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.review-question {
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+.review-question.correct {
+  background: #e6ffe6; /* light green */
+  border-left: 5px solid green;
+}
+.review-question.wrong {
+  background: #ffe6e6; /* light red */
+  border-left: 5px solid red;
+}
+
+.result-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 600px;
+    margin: 30px auto;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+.result-details p { margin: 6px 0; color: #444; }
+.result-stats { display: flex; justify-content: space-between; margin: 20px 0; gap: 10px; }
+.stat { flex: 1; padding: 12px; border-radius: 10px; font-weight: 600; }
+.stat.correct { background: #e8f8f0; color: #27ae60; }
+.stat.wrong { background: #fdecea; color: #e74c3c; }
+.stat.skipped { background: #fef9e7; color: #f39c12; }
+.review { margin-top: 20px; text-align: left; }
+.review-question { padding: 12px; margin-bottom: 10px; border-radius: 8px; background: #f9f9f9; }
+.review-question.correct { border-left: 5px solid #27ae60; }
+.review-question.wrong { border-left: 5px solid #e74c3c; }
+.result-actions { margin-top: 25px; }
+.result-actions button {
+    background: #2e9031; color: #fff; border: none; padding: 12px 24px;
+    border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer;
+    transition: background 0.3s;
+}
+.result-actions button:hover { background: #27ae60; }
+
+.top-exit {
+  text-align: center;
+}
+
