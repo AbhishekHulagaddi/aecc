@@ -48,7 +48,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 
 		String requestUrl = request.getRequestURI().toString();
-		System.out.println(requestUrl);
+//		System.out.println(requestUrl);
 
 
 		// Define a list of URLs for which token validation is not required
@@ -58,14 +58,39 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 				"/swagger-ui/index.css", "/swagger-ui/swagger-ui-bundle.js", "/swagger-ui/swagger-initializer.js",
 				"/v3/api-docs", "/swagger-ui/swagger-ui-standalone-preset.js", "/swagger-ui/favicon-32x32.png",
 				"/swagger-ui/favicon-16x16.png", "/Auth/User/signin", "/Auth/User/sendOtp","/Auth/User/Create","/Auth/User/ForgotPassword",
-				"/Auth/Roles/GetAll","/Message/Message/Create","/Question/Question/AddWeeklyTest"
+				"/Auth/Roles/GetAll","/Message/Message/Create","/Question/Question/AddWeeklyTest",
+	              "/", "/index.html", "**.css", "**.js", "**.html","/style.css",
+	              "/register.js", "/script.js", "/spinner.css", "/style.css", "/userDashboard.html", "/chatbot.js", "/dashboard.js", "/dashboard_style.css", "/dropdown.css",
+	              "/forgotpassword.html", "/forgotpassword.js", "/main.js", "/onlinetest.css", "/onlinetest.js", "/package-lock", "/profile.css", "/profile.js", "register.html",
+	              "/images/logo.jpg","/images/chatbot.png","/image/bg.jpg","/onlineTest/mcq.js",
+	              "/.well-known/appspecific/com.chrome.devtools.json","/onlineTest/mcq.html","/onlineTest/mcq.css"
+	
 		);
+		
 
-		// Check if the request URL is in the excluded URLs list
-		if (excludedUrls.contains(requestUrl)) {
-			filterChain.doFilter(request, response);
-			return;
-		}
+	    // Extensions for static files
+	    List<String> excludedExtensions = Arrays.asList(".css", ".js", ".html", ".png", ".jpg", ".jpeg", ".gif", ".ico",".pdf",".mjs",".ftl", ".svg",".json");
+
+	    // Prefixes (folders)
+	    List<String> excludedPrefixes = Arrays.asList("/swagger-ui/", "/v3/api-docs", "/swagger-resources", "/images/","/notes",    "/pdfjs/web/**",        // ✅ allow viewer.html, viewer.js, viewer.css
+	    	    "/pdfjs/build/**"  );
+
+	    boolean skip = excludedUrls.contains(requestUrl)
+	            || excludedExtensions.stream().anyMatch(requestUrl::endsWith)
+	            || excludedPrefixes.stream().anyMatch(requestUrl::startsWith);
+
+	    if (skip) {
+	        filterChain.doFilter(request, response);
+	        return;
+	    }else {
+			System.out.println(requestUrl);
+	    }
+
+//		// Check if the request URL is in the excluded URLs list
+//		if (excludedUrls.contains(requestUrl)) {
+//			filterChain.doFilter(request, response);
+//			return;
+//		}
 
 		try {
 			String jwt = parseJwt(request);

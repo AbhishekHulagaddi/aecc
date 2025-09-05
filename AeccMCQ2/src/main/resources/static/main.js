@@ -214,9 +214,3 @@ function logout() {
     localStorage.clear();
     window.location.href = "index.html";
 }
-
-  function openPDF(pdfPath) {
-    const viewerUrl = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(pdfPath)}#disableDownload=true`;
-    document.getElementById("pdfViewer").src = viewerUrl;
-    document.getElementById("pdfViewerContainer").style.display = "block";
-  }

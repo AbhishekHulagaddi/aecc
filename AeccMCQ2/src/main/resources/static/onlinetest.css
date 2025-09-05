@@ -135,3 +135,48 @@ label[for="subjectDropdown"] {
 .section-box.open {
     max-height: 1000px; /* large enough for all buttons */
 }
+
+  #notes .container {
+    max-width: 800px;
+    margin: 90px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  #notes h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2c3e50;
+  }
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* space between buttons */
+  margin-top: 50px; /* pushes the whole notes list down */
+}
+
+  .note-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    word-wrap: break-word; /* handle long text */
+  }
+
+  .note-btn:hover {
+    background: #e9f3ff;
+    border-color: #0b6d18;
+    color: #0f9225;
+    transform: translateY(-2px);
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+  }
+  

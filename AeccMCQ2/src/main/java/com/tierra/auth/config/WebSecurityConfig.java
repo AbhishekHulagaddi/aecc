@@ -106,6 +106,31 @@ public class WebSecurityConfig {
                         "/configuration/security", "/swagger-ui.html", "/swagger-ui.html", "/swagger-ui/**",
                         "/v3/api-docs/**", "/swagger-resources/**","/Auth/User/signin","/Auth/User/sendOtp","/Auth/User/ForgotPassword", "/Auth/User/Create","/Auth/Roles/GetAll",
                         "/Question/Question/AddWeeklyTest","/Message/Message/Create","/webjars/**").permitAll()
+
+                    // ✅ Swagger & docs
+                    .requestMatchers(
+                        "/v2/api-docs",
+                        "/v3/api-docs/**",
+                        "/swagger-resources/**",
+                        "/configuration/ui",
+                        "/configuration/security",
+                        "/swagger-ui.html",
+                        "/swagger-ui/**",
+                        "/webjars/**"
+                    ).permitAll()
+
+                    // ✅ Static frontend resources
+                    .requestMatchers(
+                        "/", "/index.html",
+                        "/css/**", "/js/**", "/images/**", "/.well-known/**"
+                    ).permitAll()
+                    .requestMatchers(
+                        "/**.css", "/**.js", "/**.html", "/**.png","/**.html", "/**.jpg", "/**.jpeg", "/**.ico", "/**.json","/notes/**" , "/**.mjs",  "/**.svg",  "/pdfjs/web/**",        // ✅ allow viewer.html, viewer.js, viewer.css
+                        "/pdfjs/build/**"  
+                    ).permitAll()
+
+
+
                 .anyRequest().authenticated())
             .headers(headers -> headers.frameOptions(frameOption -> frameOption.sameOrigin()))
             .authenticationProvider(authenticationProvider())

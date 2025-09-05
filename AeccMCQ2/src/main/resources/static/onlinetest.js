@@ -1,5 +1,5 @@
 const userData = JSON.parse(sessionStorage.getItem("userData"));
-
+console.log("onlineTest.js loaded");
 // Generic function to load subjects into a dropdown
 async function loadSubjectsForDropdown(dropdownId, onSelectCallback) {
     const dropdown = document.querySelector(`#${dropdownId}`);
@@ -144,7 +144,7 @@ async function displayTests(subjectId) {
                         questions: questionsData
                     }));
 
-                    window.location.href = "onlineTest/mcq.html";
+                    window.location.href = "mcq.html";
                 } catch (err) {
                     console.error("Error loading questions:", err);
                     alert("Failed to load questions. Please try again.");
@@ -205,7 +205,7 @@ async function loadWeeklyTests() {
                 }));
 
                 // Redirect to MCQ page
-                window.location.href = "onlineTest/mcq.html";
+                window.location.href = "mcq.html";
             };
 
             container.appendChild(box);

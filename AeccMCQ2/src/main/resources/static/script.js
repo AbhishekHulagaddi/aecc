@@ -34,7 +34,6 @@ async function login() {
 
 
 
-
 window.onload = function() {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user && document.getElementById("user-info")) {
