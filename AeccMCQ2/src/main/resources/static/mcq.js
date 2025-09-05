@@ -1,7 +1,7 @@
 let questions = [];
 let currentQuestionIndex = 0;
 let userAnswers = {};
-let timerDuration = 1 * 60; // 30 minutes in seconds
+let timerDuration = 30 * 60; // 30 minutes in seconds (1800)
 let isSubmitted = false; // ✅ Flag to avoid multiple submissions
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -109,12 +109,31 @@ function startTimer() {
     }, 1000);
 }
 
+function showSpinner() {
+    document.getElementById("spinner").style.display = "flex";
+    const submitBtn = document.getElementById("submitBtn");
+    if (submitBtn) {
+        submitBtn.disabled = true; // ✅ Prevent multiple clicks
+        submitBtn.textContent = "Submitting..."; // Optional
+    }
+}
 
+function hideSpinner(success = false) {
+    document.getElementById("spinner").style.display = "none";
+    const submitBtn = document.getElementById("submitBtn");
+    if (submitBtn && !success) {
+        // ✅ Only re-enable if submission failed
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+    }
+}
 
 async function submitTest() {
 
     if (isSubmitted) return; // ✅ Prevent multiple submissions
         isSubmitted = true;
+     showSpinner(); // ✅ Show spinner before API call
+
     const userId = sessionStorage.getItem("userId"); // assuming you store logged-in userId
 
     // Prepare payload for API
@@ -156,6 +175,7 @@ async function submitTest() {
 
         const result = await response.json();
         console.log("Server Response:", result);
+        hideSpinner();
 
         // Hide test UI
         document.getElementById("question-container").style.display = "none";
@@ -216,6 +236,7 @@ async function submitTest() {
     } catch (error) {
         console.error("Error submitting test:", error);
         alert("There was a problem submitting your test. Please try again.");
+        hideSpinner();
     }
 }
 
