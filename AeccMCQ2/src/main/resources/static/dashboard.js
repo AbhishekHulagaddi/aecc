@@ -1,10 +1,6 @@
-//const API_URL = "http://localhost:8081/Auth";
-const API_URL = "https://tierraagniveshacoaching.up.railway.app/Auth"; // Update if needed
-
-console.log("dashboard.js loaded");
 
 
-console.log("dashboard.js loaded");
+
 
 window.viewPDF = function(path) {
   console.log("Loading PDF:", path);
@@ -33,7 +29,7 @@ window.logout = async function () {
 
     try {
         if (token) {
-            await fetch(`${API_URL}User/signout`, {
+            await fetch(window.BASE_URL + "/Auth/User/signout", {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -51,7 +47,5 @@ window.logout = async function () {
     // Redirect to login page
     window.location.href = "index.html";
 
-// dashboard.js
-console.log(notes.join("\n"));
 
 }

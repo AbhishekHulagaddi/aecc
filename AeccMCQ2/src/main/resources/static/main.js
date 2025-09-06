@@ -1,3 +1,4 @@
+
 function showScreen(screenId) {
     document.querySelectorAll(".screen").forEach(screen => screen.classList.remove("active-screen"));
     document.getElementById(screenId).classList.add("active-screen");
@@ -12,8 +13,7 @@ async function displayResutSections() {
     container.innerHTML = "<p>Loading...</p>";
 
     try {
-   //     const response = await fetch("http://localhost:8081/Result/Result/FindSection", {
-        const response = await fetch("https://tierraagniveshacoaching.up.railway.app/Result/Result/FindSection", {
+        const response = await fetch(window.BASE_URL + "/Result/Result/FindSection", {
  
             method: "POST",
             headers: {
@@ -50,8 +50,7 @@ async function displayResutSections() {
 
                 secBtn.onclick = async () => {
                     try {
-                     //   const response = await fetch("http://localhost:8081/Result/Result/FindUserResult", {
-                        const response = await fetch("https://tierraagniveshacoaching.up.railway.app/Result/Result/FindUserResult", {
+                       const response = await fetch(window.BASE_URL + "/Result/Result/FindUserResult", {
  
                             method: "POST",
                             headers: {
@@ -203,8 +202,7 @@ function logout() {
 
     try {
         if (token) {
-           // fetch("http://localhost:8081/Auth/User/signout", {
-            fetch("https://tierraagniveshacoaching.up.railway.app/Auth/User/signout", {
+            fetch(window.BASE_URL + "/Auth/User/signout", {
  
                 method: "POST",
                 headers: {

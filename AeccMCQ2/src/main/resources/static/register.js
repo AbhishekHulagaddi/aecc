@@ -1,5 +1,4 @@
-//const API_URL = "http://localhost:8081/Auth/";
-const API_URL = "https://tierraagniveshacoaching.up.railway.app/Auth/";
+
 
 
 async function register() {
@@ -24,7 +23,7 @@ async function register() {
 
     showSpinner2();
     try {
-    const response = await fetch(`${API_URL}User/Create`, {
+    const response = await fetch(window.BASE_URL + "/Auth/User/Create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -71,7 +70,7 @@ async function requestOTP() {
   showSpinner1();
 
   try {
-    const response = await fetch(`${API_URL}/User/sendOtp`, {
+    const response = await fetch(window.BASE_URL + "/Auth/User/sendOtp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ mail: email,userType:'New'

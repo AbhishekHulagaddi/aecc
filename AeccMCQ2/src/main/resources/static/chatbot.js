@@ -1,3 +1,5 @@
+import BASE_URL from "./config.js";
+
 function toggleChatbox() {
   const chatbox = document.getElementById("chatbox");
   chatbox.style.display = (chatbox.style.display === "flex") ? "none" : "flex";
@@ -17,8 +19,8 @@ function sendMessage() {
   input.value = "";
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
-  // Call API for bot response
-  fetch("http://192.168.2.28:8180/ChatBot/ChatBot/Chat", {
+
+    fetch(window.BASE_URL + "/ChatBot/ChatBot/Chat", {
     method: "POST",
     headers: { "Content-Type": "text/plain" },
     body: msg

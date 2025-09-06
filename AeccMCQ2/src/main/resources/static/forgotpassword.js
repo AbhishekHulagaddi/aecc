@@ -1,5 +1,4 @@
-//const API_URL = "http://localhost:8081/Auth";
-const API_URL = "https://tierraagniveshacoaching.up.railway.app/Auth"; // Update if needed
+
 
 async function requestOTP() {
   const email = document.getElementById('forgot-email').value;
@@ -11,7 +10,7 @@ async function requestOTP() {
   }
 
   try {
-    const response = await fetch(`${API_URL}/User/sendOtp`, {
+    const response = await fetch(window.BASE_URL + "/Auth/User/sendOtp", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ mail: email })
@@ -46,8 +45,8 @@ async function resetPassword() {
     return;
   }
 
-  try {
-    const response = await fetch(`${API_URL}/User/ForgotPassword`, {
+  try {""
+    const response = await fetch(window.BASE_URL + "/ForgotPassword", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ 

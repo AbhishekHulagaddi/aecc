@@ -1,11 +1,10 @@
-//const API_URL = "http://localhost:8081/Auth";
-const API_URL = "https://tierraagniveshacoaching.up.railway.app/Auth"; // Your backend base URL
+
 async function login() {
     const userName = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
 
     try {
-        const response = await fetch(`${API_URL}/User/signin`, {
+        const response = await fetch(window.BASE_URL + "/Auth/signin", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ userName, password })

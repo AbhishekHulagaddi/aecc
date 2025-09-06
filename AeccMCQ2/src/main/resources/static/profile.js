@@ -1,5 +1,4 @@
-//const API_URL = "http://localhost:8081/Auth";
-const API_URL = "https://tierraagniveshacoaching.up.railway.app/Auth";
+
 
 window.onload = async function () {
     const token = sessionStorage.getItem("token");
@@ -22,7 +21,7 @@ window.onload = async function () {
     await loadDashboardCharts();
 
     try {
-        const response = await fetch(`${API_URL}/User/FindByUserCode`, {
+        const response = await fetch(window.BASE_URL + "/Auth/User/FindByUserCode", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${userData.token}`,
@@ -74,7 +73,7 @@ window.editUser = async function () {
 
     
     try {
-        const response = await fetch(`${API_URL}/User/Update`, {
+        const response = await fetch(window.BASE_URL + "/Auth/User/Update", {
             method: "POST", 
             headers: {
                 "Authorization": `Bearer ${token}`,
@@ -106,8 +105,8 @@ window.logout = async function () {
 
     try {
         if (token) {
-   //         await fetch("http://localhost:8081/Auth/User/signout", {
-            await fetch("https://tierraagniveshacoaching.up.railway.app/Auth/User/signout", {
+
+            await fetch(window.BASE_URL + "/Auth/User/signout", {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -132,8 +131,7 @@ async function loadDashboardCharts() {
     }
 
     try {
- //       const response = await fetch("http://localhost:8081/Result/Result/UserDashboard", {
-        const response = await fetch("https://tierraagniveshacoaching.up.railway.app/Result/Result/UserDashboard", {
+        const response = await fetch(window.BASE_URL + "/Result/Result/UserDashboard", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,
