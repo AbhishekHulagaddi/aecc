@@ -10,7 +10,8 @@ async function loadSubjectsForDropdown(dropdownId, onSelectCallback) {
     optionsContainer.innerHTML = "";
 
     try {
-        const response = await fetch("http://localhost:8081/MasterData/Subject/GetAll", {
+      //  const response = await fetch("http://localhost:8081/MasterData/Subject/GetAll", {
+        const response = await fetch("http://tierraagniveshacoaching.up.railway.app/MasterData/Subject/GetAll", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${userData.token}`,
@@ -82,7 +83,8 @@ async function displayTests(subjectId) {
     }
 
     try {
-        const response = await fetch("http://localhost:8081/Question/Question/FindSection", {
+//        const response = await fetch("http://localhost:8081/Question/Question/FindSection", {
+        const response = await fetch("http://tierraagniveshacoaching.up.railway.app/Question/Question/FindSection", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${userData.token}`,
@@ -119,7 +121,9 @@ async function displayTests(subjectId) {
             box.innerHTML = `<h4>Test ${section}</h4><p>Click to open test</p>`;
             box.onclick = async () => {
                 try {
-                    const questionsRes = await fetch("http://localhost:8081/Question/Question/GetAll", {
+ //                   const questionsRes = await fetch("http://localhost:8081/Question/Question/GetAll", {
+                    const questionsRes = await fetch("http://tierraagniveshacoaching.up.railway.app/Question/Question/GetAll", {
+ 
                         method: "POST",
                         headers: {
                             "Authorization": `Bearer ${userData.token}`,
@@ -165,7 +169,8 @@ async function loadWeeklyTests() {
     container.innerHTML = "<p>Loading...</p>";
 
     try {
-        const response = await fetch("http://localhost:8081/Question/Question/GetAll", {
+    //    const response = await fetch("http://localhost:8081/Question/Question/GetAll", {
+       const response = await fetch("hhttp://tierraagniveshacoaching.up.railway.app/Question/Question/GetAll", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${userData.token}`,

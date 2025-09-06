@@ -12,7 +12,9 @@ async function displayResutSections() {
     container.innerHTML = "<p>Loading...</p>";
 
     try {
-        const response = await fetch("http://localhost:8081/Result/Result/FindSection", {
+   //     const response = await fetch("http://localhost:8081/Result/Result/FindSection", {
+        const response = await fetch("http://tierraagniveshacoaching.up.railway.app/Result/Result/FindSection", {
+ 
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${userData.token}`,
@@ -48,7 +50,9 @@ async function displayResutSections() {
 
                 secBtn.onclick = async () => {
                     try {
-                        const response = await fetch("http://localhost:8081/Result/Result/FindUserResult", {
+                     //   const response = await fetch("http://localhost:8081/Result/Result/FindUserResult", {
+                        const response = await fetch("http://tierraagniveshacoaching.up.railway.app/Result/Result/FindUserResult", {
+ 
                             method: "POST",
                             headers: {
                                 "Authorization": `Bearer ${userData.token}`,
@@ -199,7 +203,9 @@ function logout() {
 
     try {
         if (token) {
-            fetch("http://localhost:8081/Auth/User/signout", {
+           // fetch("http://localhost:8081/Auth/User/signout", {
+            fetch("http://tierraagniveshacoaching.up.railway.app/Auth/User/signout", {
+ 
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`
