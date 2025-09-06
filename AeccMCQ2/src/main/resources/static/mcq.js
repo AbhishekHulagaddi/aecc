@@ -161,7 +161,7 @@ async function submitTest() {
 
     try {
   //      const response = await fetch("http://localhost:8081/Result/Result/Create", {
-        const response = await fetch("http://tierraagniveshacoaching.up.railway.app/Result/Result/Create", {     
+        const response = await fetch("https://tierraagniveshacoaching.up.railway.app/Result/Result/Create", {     
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

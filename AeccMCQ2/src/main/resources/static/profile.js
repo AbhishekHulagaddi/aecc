@@ -1,5 +1,5 @@
 //const API_URL = "http://localhost:8081/Auth";
-const API_URL = "http://tierraagniveshacoaching.up.railway.app/Auth";
+const API_URL = "https://tierraagniveshacoaching.up.railway.app/Auth";
 
 window.onload = async function () {
     const token = sessionStorage.getItem("token");
@@ -107,7 +107,7 @@ window.logout = async function () {
     try {
         if (token) {
    //         await fetch("http://localhost:8081/Auth/User/signout", {
-            await fetch("http://tierraagniveshacoaching.up.railway.app/Auth/User/signout", {
+            await fetch("https://tierraagniveshacoaching.up.railway.app/Auth/User/signout", {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -133,7 +133,7 @@ async function loadDashboardCharts() {
 
     try {
  //       const response = await fetch("http://localhost:8081/Result/Result/UserDashboard", {
-        const response = await fetch("http://tierraagniveshacoaching.up.railway.app/Result/Result/UserDashboard", {
+        const response = await fetch("https://tierraagniveshacoaching.up.railway.app/Result/Result/UserDashboard", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,

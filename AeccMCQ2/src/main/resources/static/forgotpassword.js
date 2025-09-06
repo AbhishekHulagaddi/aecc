@@ -1,5 +1,5 @@
 //const API_URL = "http://localhost:8081/Auth";
-const API_URL = "http://tierraagniveshacoaching.up.railway.app/Auth"; // Update if needed
+const API_URL = "https://tierraagniveshacoaching.up.railway.app/Auth"; // Update if needed
 
 async function requestOTP() {
   const email = document.getElementById('forgot-email').value;

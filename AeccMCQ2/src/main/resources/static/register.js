@@ -1,5 +1,5 @@
 //const API_URL = "http://localhost:8081/Auth/";
-const API_URL = "http://tierraagniveshacoaching.up.railway.app/Auth/";
+const API_URL = "https://tierraagniveshacoaching.up.railway.app/Auth/";
 
 
 async function register() {

@@ -11,7 +11,7 @@ async function loadSubjectsForDropdown(dropdownId, onSelectCallback) {
 
     try {
       //  const response = await fetch("http://localhost:8081/MasterData/Subject/GetAll", {
-        const response = await fetch("http://tierraagniveshacoaching.up.railway.app/MasterData/Subject/GetAll", {
+        const response = await fetch("https://tierraagniveshacoaching.up.railway.app/MasterData/Subject/GetAll", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${userData.token}`,
@@ -84,7 +84,7 @@ async function displayTests(subjectId) {
 
     try {
 //        const response = await fetch("http://localhost:8081/Question/Question/FindSection", {
-        const response = await fetch("http://tierraagniveshacoaching.up.railway.app/Question/Question/FindSection", {
+        const response = await fetch("https://tierraagniveshacoaching.up.railway.app/Question/Question/FindSection", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${userData.token}`,
@@ -122,7 +122,7 @@ async function displayTests(subjectId) {
             box.onclick = async () => {
                 try {
  //                   const questionsRes = await fetch("http://localhost:8081/Question/Question/GetAll", {
-                    const questionsRes = await fetch("http://tierraagniveshacoaching.up.railway.app/Question/Question/GetAll", {
+                    const questionsRes = await fetch("https://tierraagniveshacoaching.up.railway.app/Question/Question/GetAll", {
  
                         method: "POST",
                         headers: {
@@ -170,7 +170,7 @@ async function loadWeeklyTests() {
 
     try {
     //    const response = await fetch("http://localhost:8081/Question/Question/GetAll", {
-       const response = await fetch("hhttp://tierraagniveshacoaching.up.railway.app/Question/Question/GetAll", {
+       const response = await fetch("hhttps://tierraagniveshacoaching.up.railway.app/Question/Question/GetAll", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${userData.token}`,

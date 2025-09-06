@@ -1,5 +1,5 @@
 //const API_URL = "http://localhost:8081/Auth";
-const API_URL = "http://tierraagniveshacoaching.up.railway.app/Auth"; // Your backend base URL
+const API_URL = "https://tierraagniveshacoaching.up.railway.app/Auth"; // Your backend base URL
 async function login() {
     const userName = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
