@@ -1,0 +1,157 @@
+/* ========== General Styles ========== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* ========== Header Styles ========== */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(46, 125, 50, 0.9);
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ========== Logo and Branding ========== */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+/* Center navigation links */
+.nav-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    margin-right: 10px;
+}
+
+.nav-links a:hover {
+    color: #c8e6c9;
+}
+
+/* ========== Logout Button ========== */
+.logout-btn {
+    background: #e53935;
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 40px;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover {
+    background: #c62828;
+}
+
+/* ========== Page Content Styles ========== */
+.dashboard-content { /* Space for fixed header */
+    text-align: center;
+}
+
+/* ========== Form Container ========== */
+.container {
+    padding: 30px;
+    max-width: 500px;
+    margin: 20px auto;
+    margin-top: 100px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* ========== Form Inputs ========== */
+input {
+    width: 100%;
+    padding: 6px;
+    margin: 6px 0;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* ========== Save/Edit Button ========== */
+.edit-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.edit-btn:hover {
+    background-color: #2e7d32;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Make each input take full width in its cell */
+.form-group {
+    text-align: left;
+    margin-bottom: 10px;
+    color: #3e8100;
+}
+
+/* Two-column form layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Stack fields on small screens */
+@media screen and (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+h2 {
+    color: #3e8100;
+    font-weight: bold;
+    text-align: center
+}

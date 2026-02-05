@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MCQ Test</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpg" />
+    <link rel="stylesheet" href="mcq.css">
+</head>
+<body>
+    <div class="test-container">
+        <header class="mcq-header">
+            <div class="logo-area">
+                <img src="/images/logo.jpg" alt="logo" class="logo">
+                <span class="brand-name">AGNIVESHA ENTRANCE COACHING CLASSES</span>
+            </div>
+            <h1>MCQ Test</h1>
+            <div id="timer">30:00</div>
+        </header>
+
+        <div id="question-container"></div>
+
+        <div id="spinner" class="spinner-overlay" style="display:none;">
+        <div class="spinner"></div>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+            <button id="submitBtn">Submit Test</button>
+        </div>
+    </div>
+
+    <div id="score-container" style="display:none; margin-top:20px;"></div>
+    <script src="config.js"></script>
+    <script src="mcq.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+package com.rim.auth.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class CORSConfig implements WebMvcConfigurer {
+    private static final String ALLOWED_HEADERS = "Content-Type, X-Requested-With, accept, Origin, srfileInfo, responsetype, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization, Bearer, X-Auth-Token";
+    private static final String ALLOWED_METHODS = "GET, POST, HEAD, DELETE, OPTIONS, PUT";
+    private static final String MAX_AGE = "3600"; // You can adjust this value as needed
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*") // Allow requests from any origin
+                .allowedMethods(ALLOWED_METHODS)
+                .allowedHeaders(ALLOWED_HEADERS)
+                .maxAge(Long.parseLong(MAX_AGE));
+    }
+}
+
+//    @Bean
+//    public CorsFilter corsFilter() {
+//        CorsConfiguration corsConfiguration = new CorsConfiguration();
+// 
+//        corsConfiguration.addAllowedOrigin(ALLOWED_ORIGIN); // You can specify specific origins
+//        corsConfiguration.addAllowedMethod(ALLOWED_METHODS); // You can specify specific HTTP methods
+//        corsConfiguration.addAllowedHeader(ALLOWED_HEADERS); // You can specify specific headers
+//        corsConfiguration.setAllowCredentials(true);
+//
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", corsConfiguration);
+//
+//        return new CorsFilter(source);
+//    }
+

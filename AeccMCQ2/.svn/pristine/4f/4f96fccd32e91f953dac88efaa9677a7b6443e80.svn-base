@@ -1,0 +1,30 @@
+server.port=8081
+
+spring.datasource.url= jdbc:sqlserver://192.168.2.74:1433;databaseName=RMS;TrustServerCertificate=True
+spring.datasource.username=sa
+spring.datasource.password=Sqloct@2021
+
+spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.jpa.show-sql=false
+
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.properties.hibernate.format_sql = true
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.SQLServerDialect
+
+spring.application.name=RMS
+
+springdoc.api-docs.enabled=true
+springdoc.swagger-ui.enabled=true
+
+jwtExpirationMs:3600000000
+jwtSecret:myJwtSecret.myJwtSecret.myJwtSecret.myJwtSecret.myJwtSecret.myJwtSecret.myJwtSecret.
+
+
+#jwt.secret: mySecret
+#jwt.expiration: 36000000
+
+module-name: Module1
+api-version: 0.0.1
+
+

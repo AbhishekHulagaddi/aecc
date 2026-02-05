@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results Monitoring</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div style="display:flex;align-items:center;">
+            <img src="assets/logo.png" alt="Logo">
+            <span class="app-title">Application Admin</span>
+        </div>
+        <button onclick="logout()">Logout</button>
+    </header>
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="users.html">Users</a>
+        <a href="questions.html">Questions</a>
+        <a href="notes.html">Notes</a>
+    </nav>
+    <div class="container">
+        <h2>Results Monitoring</h2>
+        <div id="resultsList"></div>
+    </div>
+    <script src="js/results.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
